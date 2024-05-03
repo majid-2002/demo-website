@@ -26,14 +26,14 @@ const Dasbhobardpage = () => {
               width={24}
               height={24}
             />
-            <span className="bg-gray-300 h-full w-[1.2px]"></span>
+            <span className="bg-gray-300 h-full w-[1px]"></span>
             <Image
               src="/images/notification.svg"
               alt="noftification"
               width={24}
               height={24}
             />
-            <span className="bg-gray-300 h-full w-[1.2px]"></span>
+            <span className="bg-gray-300 h-full w-[1px]"></span>
             <Image src="/images/menu.svg" alt="menu" width={24} height={24} />
           </div>
         </div>
