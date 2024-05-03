@@ -51,7 +51,7 @@ const Card = () => {
           <PieCenterLabel>12345</PieCenterLabel>
         </PieChart>
       </div>
-      <div className=" w-full justify-between h-full gap-y-2 flex flex-col">
+      <div className=" w-full justify-between h-full mt-2 gap-y-2 flex flex-col">
         <div className="rounded-md text-base bg-gradient-to-r h-8 px-4 from-white items-center to-yellow-300 w-full text-black flex justify-between ">
           <p className="text-sm">Upcoming</p>
           <p className="text-sm"> 50</p>
