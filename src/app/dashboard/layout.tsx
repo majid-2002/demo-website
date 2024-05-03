@@ -7,7 +7,7 @@ export default function DashboarLayout({
 }>) {
   return (
     <div className="min-h-screen bg-[#F7FAFF] flex flex-row">
-      <div className="flex flex-col gap-y-6 w-20 p-3 pt-6 items-center bg-white">
+      <div className="flex flex-col gap-y-6 w-20 p-3 pt-6 items-center fixed h-screen bg-white">
         <Image src="/images/logo.svg" alt="logo" width={40} height={40} />
         <div className="gap-y-5 flex items-center flex-col cursor-pointer">
           <Image
@@ -53,7 +53,7 @@ export default function DashboarLayout({
           <Image src="/images/settings.svg" alt="logo" width={30} height={30} />
         </div>
       </div>
-      <main className="w-full min-h-screen">{children}</main>
+      <main className="w-full pl-20  min-h-screen">{children}</main>
     </div>
   );
 }
