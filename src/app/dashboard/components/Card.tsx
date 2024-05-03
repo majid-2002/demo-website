@@ -27,7 +27,7 @@ const Card = () => {
   function PieCenterLabel({ children }: { children: React.ReactNode }) {
     const { width, height, left, top } = useDrawingArea();
     return (
-      <StyledText x={left + width / 2} y={top + height / 2} className="text-sm">
+      <StyledText x={left + width / 2} y={top + height / 2} className="text-sm font-bold">
         {children}
       </StyledText>
     );
