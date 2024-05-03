@@ -57,7 +57,7 @@ const Dasbhobardpage = () => {
             Quick Actions
           </h3>
         </div>
-        <div className="flex flex-row bg-white shadow-md rounded-2xl p-5">
+        <div className="flex flex-row bg-white shadow-md rounded-3xl p-5">
           <div className="w-full flex-col gap-y-3 flex justify-center items-center">
             <Image
               src={"/images/indents.svg"}
