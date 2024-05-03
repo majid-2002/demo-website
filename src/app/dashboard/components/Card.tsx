@@ -57,11 +57,11 @@ const Card = () => {
           <p className="text-sm"> 50</p>
         </div>
         <div className="rounded-md text-base bg-gradient-to-r h-10 px-4 from-white items-center to-indigo-700 w-full text-black flex justify-between">
-          <p className=" text-sm">Upcoming</p>
+          <p className=" text-sm">Ongoing</p>
           <p className="text-sm">50</p>
         </div>
         <div className="rounded-md bg-gradient-to-r h-10 px-4 from-white items-center to-emerald-500 w-full text-black flex justify-between">
-          <p className="text-sm">Upcoming</p>
+          <p className="text-sm">Completed</p>
           <p className="text-sm">50</p>
         </div>
       </div>
