@@ -28,7 +28,7 @@ const Dasbhobardpage = () => {
             <Image src="/images/menu.svg" alt="menu" width={24} height={24} />
           </div>
         </div>
-        <div className="flex flex-row gap-x-6">
+        <div className="flex flex-row gap-x-4">
           <Card />
           <Card />
           <Card />
