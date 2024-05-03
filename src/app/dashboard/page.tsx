@@ -100,11 +100,20 @@ const Dasbhobardpage = () => {
             <p className="text-black text-base font-medium">Create Indents</p>
           </div>
         </div>
-        <div>
+        <div className="flex flex-row justify-between">
           <h3 className="text-xl w-full  text-black h-10 p-2 font-medium">
             {" "}
             Hight Priority alerts (14)
           </h3>
+          <div className="flex items-center">
+            <p className="text-base font-normal whitespace-nowrap  hover:underline cursor-pointer text-[#1A3875]">View All</p>
+            <Image
+              src={"/images/leftarrow.svg"}
+              alt="leftarrow"
+              width={24}
+              height={24}
+            ></Image>
+          </div>
         </div>
         <div className="flex flex-row gap-x-16">
           <Alert />
