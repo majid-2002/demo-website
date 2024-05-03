@@ -3,13 +3,23 @@ import Image from "next/image";
 import Card from "./components/Card";
 import ExpenseCard from "./components/ExpenseCard";
 import Alert from "./components/Alert";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 const Dasbhobardpage = () => {
+
   return (
     <div className="w-full flex flex-row gap-x-3 justify-between">
       <div className="flex-col flex  w-[70vw]  justify-between p-6 gap-y-3">
         <div className="w-full flex flex-row justify-between">
-          <h3 className="text-3xl font-medium text-black">Dashboard</h3>
+          <h3
+            className={
+              "text-3xl font-medium text-black " + montserrat.className
+            }
+          >
+            Dashboard
+          </h3>
           <div className="flex flex-row bg-white rounded-full p-2 gap-x-3 shadow-sm">
             <Image
               src="/images/search.svg"
