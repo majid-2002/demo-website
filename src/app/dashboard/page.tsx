@@ -14,18 +14,18 @@ const Dasbhobardpage = () => {
             <Image
               src="/images/search.svg"
               alt="search"
-              width={25}
-              height={25}
+              width={24}
+              height={24}
             />
             <span className="bg-gray-300 h-full w-[1.2px]"></span>
             <Image
               src="/images/notification.svg"
               alt="noftification"
-              width={25}
-              height={25}
+              width={24}
+              height={24}
             />
             <span className="bg-gray-300 h-full w-[1.2px]"></span>
-            <Image src="/images/menu.svg" alt="menu" width={35} height={35} />
+            <Image src="/images/menu.svg" alt="menu" width={24} height={24} />
           </div>
         </div>
         <div className="flex flex-row gap-x-6">
@@ -40,7 +40,7 @@ const Dasbhobardpage = () => {
             Quick Actions
           </h3>
         </div>
-        <div className="flex flex-row bg-white shadow-md rounded-2xl p-8">
+        <div className="flex flex-row bg-white shadow-md rounded-2xl p-5">
           <div className="w-full flex-col gap-y-3 flex justify-center items-center">
             <Image
               src={"/images/label.svg"}
