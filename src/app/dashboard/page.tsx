@@ -8,7 +8,6 @@ import { Montserrat } from "next/font/google";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const Dasbhobardpage = () => {
-
   return (
     <div className="w-full flex flex-row gap-x-3 justify-between">
       <div className="flex-col flex  w-[70vw]  justify-between p-6 gap-y-3">
@@ -20,7 +19,7 @@ const Dasbhobardpage = () => {
           >
             Dashboard
           </h3>
-          <div className="flex flex-row bg-white rounded-full p-2 gap-x-3 shadow-sm">
+          <div className="flex flex-row bg-white rounded-full p-2 gap-x-3 shadow-sm cursor-pointer">
             <Image
               src="/images/search.svg"
               alt="search"
