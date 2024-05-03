@@ -5,18 +5,18 @@ const Alert = () => {
   return (
     <div className="flex flex-col p-4 bg-white rounded-md shadow-md gap-y-2">
       <div className="flex flex-row gap-x-3 w-full ">
-        <div className="flex flex-row gap-x-3 w-full ">
-          <div className="bg-[#E0EAFF] p-3 rounded-xl">
+        <div className="flex flex-row gap-x-3 w-full items-center">
+          <div className="bg-[#E0EAFF] p-3 aspect-square  h-12 w-12 rounded-xl flex items-center justify-center">
             <Image
               alt="profile"
               src={"/images/profile.svg"}
-              width={30}
-              height={30}
+              width={40}
+              height={40}
             ></Image>
           </div>
-          <div className="flex flex-col  justify-center text-black font-medium">
-            <p className="text-lg font-medium">Driver raised Concern</p>
-            <div className="flex flex-row gap-x-2 text-sm">
+          <div className="flex flex-col justify-between  text-black font-medium">
+            <p className="text-base font-medium ">Driver raised Concern</p>
+            <div className="flex flex-row gap-x-2 text-xs">
               <p>Load No : 12454,</p>
               <p>Bill To : RoaDo demo Bangalore</p>
             </div>
@@ -28,7 +28,7 @@ const Alert = () => {
       </div>
       <div className="text-black font-medium text-sm">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius
+          Lorem ipsum dolor sit`` amet, consectetur adipiscing elit, sed do eius
           mod tempor incididunt ut labore et dolore magna aliqua
         </p>
       </div>
