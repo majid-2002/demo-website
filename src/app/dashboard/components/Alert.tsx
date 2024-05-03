@@ -22,7 +22,7 @@ const Alert = () => {
             </div>
           </div>
         </div>
-        <div className="text-black font-medium text-base flex justify-start w-[100px]">
+        <div className="text-black  font-medium text-sm pt-2 flex justify-start w-[100px]">
           <p>13 Feb 24</p>
         </div>
       </div>
