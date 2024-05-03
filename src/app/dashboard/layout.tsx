@@ -16,20 +16,11 @@ export default function DashboarLayout({
             width={30}
             height={30}
           />
-          <Image src="/images/addtv.svg" alt="logo" width={30} height={30} />
+          <Image src="/images/addtv.svg" alt="addtv" width={28} height={28} />
           <Image src="/images/label.svg" alt="logo" width={30} height={30} />
-          <Image
-            src="/images/balance-wallet.svg"
-            alt="logo"
-            width={30}
-            height={30}
-          />
-          <Image
-            src="/images/businesscenter.svg"
-            alt="logo"
-            width={30}
-            height={30}
-          />
+          <Image src="/images/doc.svg" alt="doc" width={30} height={30} />
+          <Image src="/images/Vector.svg" alt="logo" width={28} height={28} />
+
           <Image
             src="/images/parceltracking.svg"
             alt="logo"
@@ -42,7 +33,18 @@ export default function DashboarLayout({
             width={30}
             height={30}
           />
-          <Image src="/images/Vector.svg" alt="logo" width={30} height={30} />
+          <Image
+            src="/images/businesscenter.svg"
+            alt="logo"
+            width={30}
+            height={30}
+          />
+          <Image
+            src="/images/balance-wallet.svg"
+            alt="logo"
+            width={30}
+            height={30}
+          />
           <Image
             src="/images/dynamic-feed.svg"
             alt="logo"

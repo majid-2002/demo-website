@@ -111,14 +111,17 @@ const Dasbhobardpage = () => {
           <Alert />
         </div>
       </div>
-      <div className="w-4/12 bg-white p-5">
-        <div className="w-full">
-          <h3 className="text-xl w-full  text-black h-10 font-medium">
+      <div className="w-4/12 bg-white p-5 flex flex-col">
+        <div className="w-full flex flex-col h-10 gap-y-2">
+          <h3 className="text-xl w-full  text-black font-medium">
             {" "}
-            Hight Priority alerts (14)
+            Todays Highlights (14)
           </h3>
+          <p className="text-base w-full  text-gray-500  font-medium">
+            19 Mar 2024
+          </p>
         </div>
-        <div className="flex  flex-row justify-between w-full gap-x-6">
+        <div className="flex  flex-row justify-between w-full gap-x-6 mt-10">
           <ExpenseCard />
           <ExpenseCard />
         </div>
