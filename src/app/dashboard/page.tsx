@@ -6,7 +6,7 @@ import Alert from "./components/Alert";
 
 const Dasbhobardpage = () => {
   return (
-    <div className="w-full flex flex-row gap-x-3">
+    <div className="w-full flex flex-row gap-x-3 justify-between">
       <div className="flex-col flex  w-[70vw]  justify-between p-6 gap-y-3">
         <div className="w-full flex flex-row justify-between">
           <h3 className="text-3xl font-medium text-black">Dashboard</h3>
@@ -122,7 +122,7 @@ const Dasbhobardpage = () => {
           <Alert />
         </div>
       </div>
-      <div className="w-4/12 bg-white p-5 flex flex-col">
+      <div className="w-[25vw] bg-white p-5 flex flex-col">
         <div className="w-full flex flex-col h-10 gap-y-2">
           <h3 className="text-xl w-full  text-black font-medium">
             {" "}
