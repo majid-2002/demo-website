@@ -34,7 +34,7 @@ const Card = () => {
   }
 
   return (
-    <div className="flex flex-col  w-full bg-white  p-3 rounded-xl shadow-md h-auto gap-y-3">
+    <div className="flex flex-col  w-full bg-white  p-3 rounded-xl shadow-sm h-auto gap-y-3">
       <h3 className=" text-lg w-full text-black font-medium">Orders</h3>
       <div className=" w-full flex items-center justify-center">
         <PieChart

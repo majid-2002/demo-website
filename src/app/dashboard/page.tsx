@@ -57,7 +57,7 @@ const Dasbhobardpage = () => {
             Quick Actions
           </h3>
         </div>
-        <div className="flex flex-row bg-white shadow-md rounded-3xl p-5">
+        <div className="flex flex-row bg-white shadow-sm rounded-3xl p-5">
           <div className="w-full flex-col gap-y-3 flex justify-center items-center">
             <Image
               src={"/images/indents.svg"}
@@ -69,7 +69,7 @@ const Dasbhobardpage = () => {
             <p className="text-black text-base font-medium">Create Indents</p>
           </div>
 
-          <span className="h-2/3 my-auto bg-gray-300 w-2"></span>
+          <span className="h-4/5 my-auto bg-gray-300 w-2"></span>
 
           <div className="w-full flex flex-col gap-y-3 justify-center items-center">
             <Image
@@ -81,7 +81,8 @@ const Dasbhobardpage = () => {
             <p className="text-black font-medium text-base">Add Vehicle</p>
           </div>
 
-          <span className="h-2/3 my-auto bg-gray-300 w-2"></span>
+          <span className="h-4/5 my-auto bg-gray-300 w-2"></span>
+
 
           <div className="w-full flex flex-col gap-y-3 justify-center items-center">
             <Image
@@ -93,7 +94,7 @@ const Dasbhobardpage = () => {
             <p className="text-black text-base font-medium">Add trailer</p>
           </div>
 
-          <span className="h-2/3 my-auto bg-gray-300 w-2"></span>
+          <span className="h-4/5 my-auto bg-gray-300 w-2"></span>
 
           <div className="w-full flex flex-col gap-y-3 justify-center items-center">
             <Image
@@ -105,7 +106,7 @@ const Dasbhobardpage = () => {
             <p className="text-black text-base font-medium">Add Driver</p>
           </div>
 
-          <span className="h-2/3 my-auto bg-gray-300 w-2"></span>
+          <span className="h-4/5 my-auto bg-gray-300 w-2"></span>
 
           <div className="w-full flex-col gap-y-3 flex justify-center items-center">
             <Image

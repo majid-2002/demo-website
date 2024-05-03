@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Alert = () => {
   return (
-    <div className="flex flex-col p-4 bg-white rounded-md shadow-md gap-y-2">
+    <div className="flex flex-col p-4 bg-white rounded-md shadow-sm gap-y-2">
       <div className="flex flex-row gap-x-3 w-full ">
         <div className="flex flex-row gap-x-3 w-full items-center">
           <div className="bg-[#E0EAFF] p-3 aspect-square  h-12 w-12 rounded-xl flex items-center justify-center">
