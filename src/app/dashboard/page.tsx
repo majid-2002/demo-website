@@ -43,7 +43,7 @@ const Dasbhobardpage = () => {
         <div className="flex flex-row bg-white shadow-md rounded-2xl p-5">
           <div className="w-full flex-col gap-y-3 flex justify-center items-center">
             <Image
-              src={"/images/label.svg"}
+              src={"/images/indents.svg"}
               className=""
               width={35}
               height={35}
@@ -56,7 +56,7 @@ const Dasbhobardpage = () => {
 
           <div className="w-full flex flex-col gap-y-3 justify-center items-center">
             <Image
-              src={"/images/label.svg"}
+              src={"/images/vehicle.svg"}
               width={35}
               height={35}
               alt="label"
@@ -66,9 +66,9 @@ const Dasbhobardpage = () => {
 
           <span className="h-2/3 my-auto bg-gray-300 w-2"></span>
 
-          <div className="w-full  flex flex-col gap-y-3 justify-center items-center">
+          <div className="w-full flex flex-col gap-y-3 justify-center items-center">
             <Image
-              src={"/images/label.svg"}
+              src={"/images/trailer.svg"}
               width={35}
               height={35}
               alt="label"
@@ -80,7 +80,7 @@ const Dasbhobardpage = () => {
 
           <div className="w-full flex flex-col gap-y-3 justify-center items-center">
             <Image
-              src={"/images/label.svg"}
+              src={"/images/driver.svg"}
               width={35}
               height={35}
               alt="label"
@@ -92,7 +92,7 @@ const Dasbhobardpage = () => {
 
           <div className="w-full flex-col gap-y-3 flex justify-center items-center">
             <Image
-              src={"/images/label.svg"}
+              src={"/images/vehicle.svg"}
               width={35}
               height={35}
               alt="label"
@@ -106,7 +106,9 @@ const Dasbhobardpage = () => {
             Hight Priority alerts (14)
           </h3>
           <div className="flex items-center">
-            <p className="text-base font-normal whitespace-nowrap  hover:underline cursor-pointer text-[#1A3875]">View All</p>
+            <p className="text-base font-normal whitespace-nowrap  hover:underline cursor-pointer text-[#1A3875]">
+              View All
+            </p>
             <Image
               src={"/images/leftarrow.svg"}
               alt="leftarrow"
