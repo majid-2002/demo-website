@@ -34,9 +34,9 @@ const Card = () => {
   }
 
   return (
-    <div className="flex flex-col  w-full bg-white p-3 rounded-xl shadow-md h-[360px]">
+    <div className="flex flex-col  w-full bg-white p-3 rounded-xl shadow-md h-auto gap-y-3">
       <h3 className=" text-lg w-full text-black font-medium">Orders</h3>
-      <div className="h-[420px] w-full flex items-center justify-center">
+      <div className=" w-full flex items-center justify-center">
         <PieChart
           series={[{ data, innerRadius: 50, outerRadius: 70 }]}
           {...size}
@@ -52,15 +52,15 @@ const Card = () => {
         </PieChart>
       </div>
       <div className=" w-full justify-between h-full gap-y-2 flex flex-col">
-        <div className="rounded-md text-base bg-gradient-to-r h-10 px-4 from-white items-center to-yellow-300 w-full text-black flex justify-between ">
+        <div className="rounded-md text-base bg-gradient-to-r h-8 px-4 from-white items-center to-yellow-300 w-full text-black flex justify-between ">
           <p className="text-sm">Upcoming</p>
           <p className="text-sm"> 50</p>
         </div>
-        <div className="rounded-md text-base bg-gradient-to-r h-10 px-4 from-white items-center to-indigo-700 w-full text-black flex justify-between">
+        <div className="rounded-md text-base bg-gradient-to-r h-8 px-4 from-white items-center to-indigo-700 w-full text-black flex justify-between">
           <p className=" text-sm">Ongoing</p>
           <p className="text-sm">50</p>
         </div>
-        <div className="rounded-md bg-gradient-to-r h-10 px-4 from-white items-center to-emerald-500 w-full text-black flex justify-between">
+        <div className="rounded-md bg-gradient-to-r h-8 px-4 from-white items-center to-emerald-500 w-full text-black flex justify-between">
           <p className="text-sm">Completed</p>
           <p className="text-sm">50</p>
         </div>
