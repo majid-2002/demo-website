@@ -4,10 +4,18 @@ import Card from "./components/Card";
 import ExpenseCard from "./components/ExpenseCard";
 import Alert from "./components/Alert";
 import { Montserrat } from "next/font/google";
+import ActivitiesCard from "./components/ActivitiesCard";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const Dasbhobardpage = () => {
+  const activitiesData = [
+    "Gurpreet Singh  (Dispatch team) has created Load No. I-I-AAA-1325",
+    "Aman (Driver) Picked Up goods at Location_Name for Load No. I-I-AAA-1325",
+    "Gurpreet Singh  (Dispatch team) has created Load No. I-I-AAA-1325",
+    "Load No. I-I-AAA-1325 will start added by Gurpreet Singh",
+  ];
+
   return (
     <div className="w-full flex flex-row gap-x-3 justify-between">
       <div className="flex-col flex  w-[70vw]  justify-between p-6 gap-y-3">
@@ -131,8 +139,8 @@ const Dasbhobardpage = () => {
           <Alert />
         </div>
       </div>
-      <div className="w-[25vw] bg-white p-5 flex flex-col">
-        <div className="w-full flex flex-col h-10 gap-y-2">
+      <div className="w-[25vw] min-h-screen bg-white p-5 flex flex-col gap-y-4">
+        <div className="w-full flex flex-col h-10 gap-y-1">
           <h3 className="text-xl w-full  text-black font-medium">
             {" "}
             Todays Highlights (14)
@@ -141,10 +149,30 @@ const Dasbhobardpage = () => {
             19 Mar 2024
           </p>
         </div>
-        <div className="flex  flex-row justify-between w-full gap-x-6 mt-10">
+        <div className="flex  flex-row justify-between w-full gap-x-6 mt-6">
           <ExpenseCard />
           <ExpenseCard />
         </div>
+        <div className="flex justify-between">
+          <h3 className="text-base w-full text-black font-medium">
+            {" "}
+            Completed Activities (14)
+          </h3>
+          <p className="underline cursor-pointer text-black whitespace-nowrap text-base">
+            View All
+          </p>
+        </div>
+        <ActivitiesCard activities={activitiesData} />
+        <div className="flex justify-between">
+          <h3 className="text-base w-full text-black font-medium">
+            {" "}
+            Scheduled Activities (14)
+          </h3>
+          <p className="underline cursor-pointer text-black whitespace-nowrap text-base">
+            View All
+          </p>
+        </div>
+        <ActivitiesCard activities={activitiesData} />
       </div>
     </div>
   );
