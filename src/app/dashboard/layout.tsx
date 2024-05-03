@@ -6,7 +6,7 @@ export default function DashboarLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen bg-blue-50   flex flex-row">
+    <div className="min-h-screen bg-[#F7FAFF]   flex flex-row">
       <div className="flex flex-col gap-y-6 w-20 p-3 pt-6 items-center bg-white">
         <Image src="/images/logo.svg" alt="logo" width={40} height={40} />
         <div className="gap-y-5 flex items-center flex-col cursor-pointer">
