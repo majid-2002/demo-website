@@ -1,59 +1,47 @@
 import Image from "next/image";
+import { Providers } from "../../../Providers/provider";
+import Link from "next/link";
 
 export default function DashboarLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const iconsLinks = [
+    "/images/dashboard.svg",
+    "/images/addtv.svg",
+    "/images/label.svg",
+    "/images/doc.svg",
+    "/images/Vector.svg",
+    "/images/parceltracking.svg",
+    "/images/localshipping.svg",
+    "/images/businesscenter.svg",
+    "/images/balance-wallet.svg",
+    "/images/dynamic-feed.svg",
+    "/images/settings.svg",
+  ];
+
   return (
-    <div className="min-h-screen bg-[#F7FAFF] flex flex-row">
-      <div className="flex flex-col gap-y-6 w-20 p-3 pt-6 items-center fixed h-screen bg-white">
-        <Image src="/images/logo.svg" alt="logo" width={40} height={40} />
-        <div className="gap-y-5 flex items-center flex-col cursor-pointer">
-          <Image
-            src="/images/dashboard.svg"
-            alt="logo"
-            width={30}
-            height={30}
-          />
-          <Image src="/images/addtv.svg" alt="addtv" width={28} height={28} />
-          <Image src="/images/label.svg" alt="logo" width={30} height={30} />
-          <Image src="/images/doc.svg" alt="doc" width={30} height={30} />
-          <Image src="/images/Vector.svg" alt="logo" width={28} height={28} />
-          <Image
-            src="/images/parceltracking.svg"
-            alt="logo"
-            width={30}
-            height={30}
-          />
-          <Image
-            src="/images/localshipping.svg"
-            alt="logo"
-            width={30}
-            height={30}
-          />
-          <Image
-            src="/images/businesscenter.svg"
-            alt="logo"
-            width={30}
-            height={30}
-          />
-          <Image
-            src="/images/balance-wallet.svg"
-            alt="logo"
-            width={30}
-            height={30}
-          />
-          <Image
-            src="/images/dynamic-feed.svg"
-            alt="logo"
-            width={30}
-            height={30}
-          />
-          <Image src="/images/settings.svg" alt="logo" width={30} height={30} />
+    <Providers>
+      <div className="min-h-screen bg-[#F7FAFF] flex flex-row">
+        <div className="flex flex-col gap-y-6 w-20 p-3 pt-6 items-center fixed h-screen bg-white">
+          <Image src="/images/logo.svg" alt="logo" width={40} height={40} />
+          <div className="gap-y-5 flex items-center flex-col ">
+            {iconsLinks.map((icon, index) => (
+              <Link href="/dashboard" key={index}>
+                <Image
+                  src={icon}
+                  width={35}
+                  height={35}
+                  alt={icon.split("/")[2]}
+                  className="cursor-pointer"
+                />
+              </Link>
+            ))}
+          </div>
         </div>
+        <main className="w-full pl-20  min-h-screen">{children}</main>
       </div>
-      <main className="w-full pl-20  min-h-screen">{children}</main>
-    </div>
+    </Providers>
   );
 }

@@ -4,13 +4,14 @@ import React from "react";
 import { PieChart } from "@mui/x-charts/PieChart";
 import { useDrawingArea } from "@mui/x-charts";
 import { styled } from "@mui/material/styles";
+import { Card as CardProps } from "../../../../features/card/cardSlice";
 
-const Card = () => {
-  const data = [
-    { value: 5, label: "A", color: "#FFCB49" },
-    { value: 10, label: "B", color: "#7464FF" },
-    { value: 15, label: "C", color: "#4FD2B5" },
-  ];
+const Card = ({ data }: CardProps) => {
+  // const data = [
+  //   { value: 5, label: "A", color: "#FFCB49" },
+  //   { value: 10, label: "B", color: "#7464FF" },
+  //   { value: 15, label: "C", color: "#4FD2B5" },
+  // ];
 
   const size = {
     width: 400,
@@ -27,7 +28,11 @@ const Card = () => {
   function PieCenterLabel({ children }: { children: React.ReactNode }) {
     const { width, height, left, top } = useDrawingArea();
     return (
-      <StyledText x={left + width / 2} y={top + height / 2} className="text-sm font-bold">
+      <StyledText
+        x={left + width / 2}
+        y={top + height / 2}
+        className="text-sm font-bold"
+      >
         {children}
       </StyledText>
     );
@@ -48,21 +53,23 @@ const Card = () => {
           }}
           className="w-full h-full"
         >
-          <PieCenterLabel>12345</PieCenterLabel>
+          <PieCenterLabel>
+            {data.reduce((acc, curr) => acc + curr.value, 0)}
+          </PieCenterLabel>
         </PieChart>
       </div>
       <div className=" w-full justify-between h-full mt-2 gap-y-2 flex flex-col">
         <div className="rounded-md text-base bg-gradient-to-r h-8 px-4 from-white items-center to-yellow-300 w-full text-black flex justify-between ">
-          <p className="text-sm">Upcoming</p>
-          <p className="text-sm"> 50</p>
+          <p className="text-sm">{data[0].label}</p>
+          <p className="text-sm">{data[0].value}</p>
         </div>
         <div className="rounded-md text-base bg-gradient-to-r h-8 px-4 from-white items-center to-indigo-700 w-full text-black flex justify-between">
-          <p className=" text-sm">Ongoing</p>
-          <p className="text-sm">50</p>
+          <p className=" text-sm">{data[1].label}</p>
+          <p className="text-sm">{data[1].value}</p>
         </div>
         <div className="rounded-md bg-gradient-to-r h-8 px-4 from-white items-center to-emerald-500 w-full text-black flex justify-between">
-          <p className="text-sm">Completed</p>
-          <p className="text-sm">50</p>
+          <p className="text-sm">{data[2].label}</p>
+          <p className="text-sm">{data[2].value}</p>
         </div>
       </div>
     </div>

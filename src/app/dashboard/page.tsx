@@ -1,20 +1,101 @@
-import React from "react";
+"use client";
+
+import React, { use } from "react";
 import Image from "next/image";
 import Card from "./components/Card";
 import ExpenseCard from "./components/ExpenseCard";
 import Alert from "./components/Alert";
 import { Montserrat } from "next/font/google";
 import ActivitiesCard from "./components/ActivitiesCard";
+import { setActivities } from "../../../features/activities/activitiesSlice";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { setCardData } from "../../../features/card/cardSlice";
+import { RootState } from "../../../utils/store";
+import { Card as CardType } from "../../../features/card/cardSlice";
+import { setAlerts } from "../../../features/alerts/alertSlice";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const Dasbhobardpage = () => {
+  const dispatch = useDispatch();
+  const allActivities = useSelector(
+    (state: RootState) => state.activities.activities
+  );
+  const allCards = useSelector((state: RootState) => state.card.cards);
+  const allAlerts = useSelector((state: RootState) => state.alert.alerts);
+
   const activitiesData = [
     "Gurpreet Singh  (Dispatch team) has created Load No. I-I-AAA-1325",
     "Aman (Driver) Picked Up goods at Location_Name for Load No. I-I-AAA-1325",
     "Gurpreet Singh  (Dispatch team) has created Load No. I-I-AAA-1325",
     "Load No. I-I-AAA-1325 will start added by Gurpreet Singh",
   ];
+
+  const alertData = [
+    {
+      id: 1,
+      title: "Driver raised Concern",
+      date: "13 Feb 24",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua",
+      LoadNo: 12454,
+      BillTo: "RoaDo demo Bangalore",
+      status: "ignored",
+    },
+    {
+      id: 2,
+      title: "Driver raised Concern",
+      date: "13 Feb 24",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua",
+      LoadNo: 12454,
+      BillTo: "RoaDo demo Bangalore",
+      status: "resolved",
+    },
+  ];
+
+  const cardsData: CardType[] = [
+    {
+      id: 1,
+      data: [
+        { value: 50, label: "Upcoming", color: "#FFCB49" },
+        { value: 100, label: "Ongoing", color: "#7464FF" },
+        { value: 50, label: "Completed", color: "#4FD2B5" },
+      ],
+    },
+    {
+      id: 2,
+      data: [
+        { value: 50, label: "Upcoming", color: "#FFCB49" },
+        { value: 100, label: "Ongoing", color: "#7464FF" },
+        { value: 50, label: "Completed", color: "#4FD2B5" },
+      ],
+    },
+    {
+      id: 3,
+      data: [
+        { value: 50, label: "Upcoming", color: "#FFCB49" },
+        { value: 100, label: "Ongoing", color: "#7464FF" },
+        { value: 50, label: "Completed", color: "#4FD2B5" },
+      ],
+    },
+    {
+      id: 4,
+      data: [
+        { value: 50, label: "Freight Charge", color: "#FFCB49" },
+        { value: 100, label: "Driver Charge", color: "#7464FF" },
+        { value: 50, label: "Other Charges", color: "#4FD2B5" },
+      ],
+    },
+  ];
+
+  useEffect(() => {
+    dispatch(setActivities(activitiesData));
+    dispatch(setCardData(cardsData));
+    dispatch(setAlerts(alertData));
+  }, [dispatch]);
 
   return (
     <div className="w-full flex flex-row gap-x-3 justify-between">
@@ -46,10 +127,9 @@ const Dasbhobardpage = () => {
           </div>
         </div>
         <div className="flex flex-row gap-x-4">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {allCards.map((card) => (
+            <Card id={card.id} data={card.data} key={card.id} />
+          ))}
         </div>
         <div>
           <h3 className="text-xl w-full  text-black h-10 p-2 font-medium">
@@ -82,7 +162,6 @@ const Dasbhobardpage = () => {
           </div>
 
           <span className="h-4/5 my-auto bg-gray-300 w-2"></span>
-
 
           <div className="w-full flex flex-col gap-y-3 justify-center items-center">
             <Image
@@ -136,8 +215,9 @@ const Dasbhobardpage = () => {
           </div>
         </div>
         <div className="flex flex-row gap-x-16">
-          <Alert />
-          <Alert />
+          {allAlerts.map((alert) => (
+            <Alert alert={alert} key={alert.id} />
+          ))}
         </div>
       </div>
       <div className="sm:min-w-[26vw] sm:w-[24vw]  sm:max-w-[29vw] min-h-screen bg-white p-5 flex flex-col gap-y-4">
@@ -173,7 +253,7 @@ const Dasbhobardpage = () => {
             View All
           </p>
         </div>
-        <ActivitiesCard activities={activitiesData} />
+        <ActivitiesCard activities={allActivities} />
       </div>
     </div>
   );
