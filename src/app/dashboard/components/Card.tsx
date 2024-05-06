@@ -27,6 +27,12 @@ const Card = ({ data }: CardProps) => {
     fontSize: 20,
   }));
 
+  /**
+   * PieCenterLabel component to display the total orders count in the center of the pie chart
+   *
+   * @param {React.ReactNode} children - Children to be displayed in the center of the pie chart
+   * @returns {JSX.Element} JSX representation of the PieCenterLabel component
+   */
   function PieCenterLabel({ children }: { children: React.ReactNode }) {
     const { width, height, left, top } = useDrawingArea();
     return (

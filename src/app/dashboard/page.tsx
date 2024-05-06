@@ -188,7 +188,7 @@ const Dasbhobardpage = () => {
           ))}
         </div>
       </div>
-      
+
       {/* Side Dashboard Area */}
       <div className="sm:min-w-[26vw] sm:w-[24vw]  sm:max-w-[29vw] min-h-screen bg-white p-5 flex flex-col gap-y-4">
         <div className="w-full flex flex-col h-10 gap-y-1">
