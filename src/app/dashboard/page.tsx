@@ -138,6 +138,7 @@ const Dasbhobardpage = () => {
 
   return (
     <div className="w-full flex flex-row gap-x-3 justify-between">
+      {/* Main Dashboard Area */}
       <div className="flex-col flex  w-[70vw]  justify-between p-6 gap-y-3">
         <div className="w-full flex flex-row justify-between">
           <h3
@@ -187,6 +188,8 @@ const Dasbhobardpage = () => {
           ))}
         </div>
       </div>
+      
+      {/* Side Dashboard Area */}
       <div className="sm:min-w-[26vw] sm:w-[24vw]  sm:max-w-[29vw] min-h-screen bg-white p-5 flex flex-col gap-y-4">
         <div className="w-full flex flex-col h-10 gap-y-1">
           <h3 className="text-xl w-full  text-black font-medium">
