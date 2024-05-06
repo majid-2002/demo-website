@@ -164,7 +164,7 @@ const Dasbhobardpage = () => {
         <div className="flex flex-row justify-between">
           <h3 className="text-xl w-full  text-black h-10 p-2 font-medium">
             {" "}
-            Hight Priority alerts ({allAlerts.length})
+            High Priority alerts ({allAlerts.length})
           </h3>
           <div className="flex items-center">
             <p
