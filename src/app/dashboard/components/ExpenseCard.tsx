@@ -14,7 +14,7 @@ const ExpenseCard = ({ expenseCard }: { expenseCard: ExpenseCardProps }) => {
         {expenseCard.expenseType === "income" ? "Income" : "Expense"}
       </p>
       <p
-        className={`font-semibold text-2xl  ${
+        className={`font-semibold text-xl  ${
           expenseCard.expenseType === "income"
             ? "text-[#148714]"
             : "text-[#D04141]"
