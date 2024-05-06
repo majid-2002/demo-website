@@ -44,7 +44,7 @@ const Dasbhobardpage = () => {
    *
    * @returns {string} Formatted string representing today's date
    */
-  const getTodaysDate = () => {
+  const getTodaysDate = (): string => {
     const date = new Date();
     return date.toDateString().split(" ").slice(1, 4).join(" ");
   };
