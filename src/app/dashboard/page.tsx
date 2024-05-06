@@ -18,6 +18,7 @@ import { Card as CardType } from "../../../features/card/cardSlice";
 import { setAlerts } from "../../../features/alerts/alertSlice";
 import { ExpenseCard as ExpenseCardType } from "../../../features/expenses/expenseSlice";
 import QuickAction from "./components/QuickAction";
+import DashboardOptions from "./components/DashboardOptions";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -127,7 +128,6 @@ const Dasbhobardpage = () => {
     },
   ];
 
-  
   // Dispatch actions to set initial state using useEffect hook
   useEffect(() => {
     dispatch(setActivities(activitiesData));
@@ -147,23 +147,7 @@ const Dasbhobardpage = () => {
           >
             Dashboard
           </h3>
-          <div className="flex flex-row bg-white rounded-full p-2 gap-x-3 shadow-sm cursor-pointer">
-            <Image
-              src="/images/search.svg"
-              alt="search"
-              width={24}
-              height={24}
-            />
-            <span className="bg-gray-300 h-full w-[1px]"></span>
-            <Image
-              src="/images/notification.svg"
-              alt="noftification"
-              width={24}
-              height={24}
-            />
-            <span className="bg-gray-300 h-full w-[1px]"></span>
-            <Image src="/images/menu.svg" alt="menu" width={24} height={24} />
-          </div>
+          <DashboardOptions />
         </div>
         <div className="flex flex-row gap-x-4">
           {allCards.map((card) => (

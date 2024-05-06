@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
+
+
 // Initial state of the activity slice
 const initialState = {
   activities: [],
