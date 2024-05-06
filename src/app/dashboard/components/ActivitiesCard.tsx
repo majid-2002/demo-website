@@ -1,13 +1,22 @@
 import React from "react";
 
+/**
+ * Props interface for the ActivitiesCard component
+ */
 interface ActivityProps {
   activities: string[];
 }
 
+/**
+ * ActivitiesCard component to display activity items with highlighting
+ *
+ * @param {ActivityProps} props - Props containing activities data
+ * @returns {JSX.Element} JSX representation of the ActivitiesCard component
+ */
 const ActivitiesCard = ({ activities }: ActivityProps) => {
   const higlighting = (activity: string) => {
+    //? Dummy data for names and sentences to highlight the text
     const allNames = ["Gurpreet Singh", "Aman"];
-
     const allSentences = [
       "(Dispatch team)",
       "has created",
@@ -18,19 +27,19 @@ const ActivitiesCard = ({ activities }: ActivityProps) => {
       "(Driver)",
     ];
 
+    //? Find the name and sentence to highlight
     const nameMatch = allNames.find((name) => activity.includes(name));
-
     const sentenceMatch = allSentences.find((sentence) =>
       activity.includes(sentence)
     );
 
+    //? Highlight the name and sentence
     if (sentenceMatch) {
       activity = activity.replace(
         sentenceMatch,
         `<span style="color: grey">${sentenceMatch}</span>`
       );
     }
-
     if (nameMatch) {
       activity = activity.replace(
         nameMatch,
@@ -38,18 +47,19 @@ const ActivitiesCard = ({ activities }: ActivityProps) => {
       );
     }
 
+    //? Return the highlighted activity item
     return <p key={activity} dangerouslySetInnerHTML={{ __html: activity }} />;
   };
 
   return (
     <div className="text-black ">
-      {activities.map((activity, index) => {
+      {activities.slice(0, 4).map((activity, index) => {
         return (
           <div
             key={activity}
             className={`p-4  text-sm border-t border-x border-gray-300 ${
               index == 0 && "rounded-t-md"
-            } ${index == activities.length - 1 && " rounded-b-md border-b"}`}
+            } ${index == activities.length - 1 && " rounded-b-md border-b"}`} //? Add rounded corners to the first and last activity items
           >
             {higlighting(activity)}
           </div>

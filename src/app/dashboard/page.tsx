@@ -12,11 +12,20 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { setCardData } from "../../../features/card/cardSlice";
+import { setExpenseCardData } from "../../../features/expenses/expenseSlice";
 import { RootState } from "../../../utils/store";
 import { Card as CardType } from "../../../features/card/cardSlice";
 import { setAlerts } from "../../../features/alerts/alertSlice";
+import { ExpenseCard as ExpenseCardType } from "../../../features/expenses/expenseSlice";
+import QuickAction from "./components/QuickAction";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
+
+/**
+ * Dasbhobardpage component
+ * @description This is the main dashboard page component.
+ * @returns {JSX.Element} JSX representation of the dashboard page
+ */
 
 const Dasbhobardpage = () => {
   const dispatch = useDispatch();
@@ -25,7 +34,21 @@ const Dasbhobardpage = () => {
   );
   const allCards = useSelector((state: RootState) => state.card.cards);
   const allAlerts = useSelector((state: RootState) => state.alert.alerts);
+  const allExpenses = useSelector(
+    (state: RootState) => state.expenseCard.expenseCards
+  );
 
+  /**
+   * Get today's date in a formatted string
+   *
+   * @returns {string} Formatted string representing today's date
+   */
+  const getTodaysDate = () => {
+    const date = new Date();
+    return date.toDateString().split(" ").slice(1, 4).join(" ");
+  };
+
+  //? Dummy data
   const activitiesData = [
     "Gurpreet Singh  (Dispatch team) has created Load No. I-I-AAA-1325",
     "Aman (Driver) Picked Up goods at Location_Name for Load No. I-I-AAA-1325",
@@ -42,17 +65,30 @@ const Dasbhobardpage = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua",
       LoadNo: 12454,
       BillTo: "RoaDo demo Bangalore",
-      status: "ignored",
     },
     {
       id: 2,
-      title: "Driver raised Concern",
+      title: "Reefer Temp. out of range",
       date: "13 Feb 24",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua",
       LoadNo: 12454,
       BillTo: "RoaDo demo Bangalore",
-      status: "resolved",
+    },
+  ];
+
+  const expenseData: ExpenseCardType[] = [
+    {
+      id: 1,
+      expenseType: "income",
+      totalPayments: 2,
+      totalAmount: 100000,
+    },
+    {
+      id: 2,
+      expenseType: "expense",
+      totalPayments: 5,
+      totalAmount: 5000,
     },
   ];
 
@@ -91,10 +127,13 @@ const Dasbhobardpage = () => {
     },
   ];
 
+  
+  // Dispatch actions to set initial state using useEffect hook
   useEffect(() => {
     dispatch(setActivities(activitiesData));
     dispatch(setCardData(cardsData));
     dispatch(setAlerts(alertData));
+    dispatch(setExpenseCardData(expenseData));
   }, [dispatch]);
 
   return (
@@ -137,73 +176,17 @@ const Dasbhobardpage = () => {
             Quick Actions
           </h3>
         </div>
-        <div className="flex flex-row bg-white shadow-sm rounded-3xl p-5">
-          <div className="w-full flex-col gap-y-3 flex justify-center items-center">
-            <Image
-              src={"/images/indents.svg"}
-              className=""
-              width={35}
-              height={35}
-              alt="label"
-            ></Image>
-            <p className="text-black text-base font-medium">Create Indents</p>
-          </div>
-
-          <span className="h-4/5 my-auto bg-gray-300 w-2"></span>
-
-          <div className="w-full flex flex-col gap-y-3 justify-center items-center">
-            <Image
-              src={"/images/vehicle.svg"}
-              width={35}
-              height={35}
-              alt="label"
-            ></Image>
-            <p className="text-black font-medium text-base">Add Vehicle</p>
-          </div>
-
-          <span className="h-4/5 my-auto bg-gray-300 w-2"></span>
-
-          <div className="w-full flex flex-col gap-y-3 justify-center items-center">
-            <Image
-              src={"/images/trailer.svg"}
-              width={35}
-              height={35}
-              alt="label"
-            ></Image>
-            <p className="text-black text-base font-medium">Add trailer</p>
-          </div>
-
-          <span className="h-4/5 my-auto bg-gray-300 w-2"></span>
-
-          <div className="w-full flex flex-col gap-y-3 justify-center items-center">
-            <Image
-              src={"/images/driver.svg"}
-              width={35}
-              height={35}
-              alt="label"
-            ></Image>
-            <p className="text-black text-base font-medium">Add Driver</p>
-          </div>
-
-          <span className="h-4/5 my-auto bg-gray-300 w-2"></span>
-
-          <div className="w-full flex-col gap-y-3 flex justify-center items-center">
-            <Image
-              src={"/images/vehicle.svg"}
-              width={35}
-              height={35}
-              alt="label"
-            ></Image>
-            <p className="text-black text-base font-medium">Create Indents</p>
-          </div>
-        </div>
+        <QuickAction />
         <div className="flex flex-row justify-between">
           <h3 className="text-xl w-full  text-black h-10 p-2 font-medium">
             {" "}
-            Hight Priority alerts (14)
+            Hight Priority alerts ({allAlerts.length})
           </h3>
           <div className="flex items-center">
-            <p className="text-base font-normal whitespace-nowrap  hover:underline cursor-pointer text-[#1A3875]">
+            <p
+              className="text-base font-normal whitespace-nowrap  hover:underline cursor-pointer text-[#1A3875]"
+              onClick={() => {}}
+            >
               View All
             </p>
             <Image
@@ -227,17 +210,18 @@ const Dasbhobardpage = () => {
             Todays Highlights (14)
           </h3>
           <p className="text-base w-full  text-gray-500  font-medium">
-            19 Mar 2024
+            {getTodaysDate()}
           </p>
         </div>
         <div className="flex  flex-row justify-between w-full gap-x-6 mt-6">
-          <ExpenseCard />
-          <ExpenseCard />
+          {allExpenses.map((expense) => (
+            <ExpenseCard expenseCard={expense} key={expense.id} />
+          ))}
         </div>
         <div className="flex justify-between">
           <h3 className="text-base w-full text-black font-medium">
             {" "}
-            Completed Activities (14)
+            Completed Activities ({activitiesData.length})
           </h3>
           <p className="underline cursor-pointer text-black whitespace-nowrap text-base">
             View All
@@ -247,7 +231,7 @@ const Dasbhobardpage = () => {
         <div className="flex justify-between">
           <h3 className="text-base w-full text-black font-medium">
             {" "}
-            Scheduled Activities (14)
+            Scheduled Activities ({allActivities.length})
           </h3>
           <p className="underline cursor-pointer text-black whitespace-nowrap text-base">
             View All

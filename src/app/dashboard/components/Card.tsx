@@ -6,18 +6,20 @@ import { useDrawingArea } from "@mui/x-charts";
 import { styled } from "@mui/material/styles";
 import { Card as CardProps } from "../../../../features/card/cardSlice";
 
+/**
+ * Card component to display the orders data as a pie chart with labels
+ *
+ * @param {CardProps} props - Props containing orders data
+ * @returns {JSX.Element} JSX representation of the Card component
+ */
 const Card = ({ data }: CardProps) => {
-  // const data = [
-  //   { value: 5, label: "A", color: "#FFCB49" },
-  //   { value: 10, label: "B", color: "#7464FF" },
-  //   { value: 15, label: "C", color: "#4FD2B5" },
-  // ];
-
+  //? Size of the pie chart
   const size = {
     width: 400,
     height: 200,
   };
 
+  //? text styling for the pie chart
   const StyledText = styled("text")(({ theme }) => ({
     fill: theme.palette.text.primary,
     textAnchor: "middle",

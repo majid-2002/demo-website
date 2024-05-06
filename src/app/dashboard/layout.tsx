@@ -2,11 +2,18 @@ import Image from "next/image";
 import { Providers } from "../../../Providers/provider";
 import Link from "next/link";
 
+/**
+ * Dashboard layout component
+ * @description This is the main layout component for the dashboard
+ * @param {React.ReactNode} children - The children to render
+ * @returns {JSX.Element} JSX representation of the dashboard layout
+ */
 export default function DashboarLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  //? Icons for the sidebar
   const iconsLinks = [
     "/images/dashboard.svg",
     "/images/addtv.svg",
